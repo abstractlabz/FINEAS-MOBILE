@@ -1,6 +1,7 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
+import {Image} from 'react-native';
 import ProfileScreen from '../screens/ProfileScreen';
 import WatchListScreen from '../screens/WatchListScreen';
 import AnalysisScreen from '../screens/AnalysisScreen';
@@ -22,9 +23,9 @@ const AppNavigator = () => {
           shadowColor: '#000',
           shadowOffset: {
             width: 0,
-            height: -4,
+            height: -6,
           },
-          shadowOpacity: 0.3,
+          shadowOpacity: 0.1,
           shadowRadius: 4,
           elevation: 10,
         },
@@ -36,8 +37,16 @@ const AppNavigator = () => {
         name="Profile"
         component={ProfileScreen}
         options={{
-          tabBarIcon: ({color}) => (
-            <Icon name="person-circle-outline" size={30} color={color} />
+          tabBarIcon: ({focused}) => (
+            <Image
+              source={require('../assets/default-avatar.jpeg')}
+              style={{
+                width: 27,
+                height: 27,
+                borderRadius: 12,
+                opacity: focused ? 1 : 0.5,
+              }}
+            />
           ),
         }}
       />

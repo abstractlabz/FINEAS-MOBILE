@@ -1,6 +1,7 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet, Image} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import MenuItem from '../components/MenuItem';
 
 const ProfileScreen = () => {
   return (
@@ -10,7 +11,7 @@ const ProfileScreen = () => {
       {/* Profile Section */}
       <View style={styles.profileSection}>
         <Image
-          source={require('../assets/default-avatar.jpeg')} // You'll need to add a default avatar image
+          source={require('../assets/default-avatar.jpeg')}
           style={styles.profileImage}
         />
         <View style={styles.profileInfo}>
@@ -23,50 +24,31 @@ const ProfileScreen = () => {
       </View>
 
       {/* Menu Items */}
-      <TouchableOpacity style={styles.menuItem}>
-        <Icon name="card-outline" size={24} color="white" />
-        <View style={styles.menuItemContent}>
-          <Text style={styles.menuItemTitle}>Credits</Text>
-          <Text style={styles.menuItemSubtitle}>Manually add credits</Text>
-        </View>
-        <Icon name="chevron-forward" size={24} color="white" />
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.menuItem}>
-        <Icon name="logo-google" size={24} color="white" />
-        <View style={styles.menuItemContent}>
-          <Text style={styles.menuItemTitle}>Google Account</Text>
-          <Text style={styles.menuItemSubtitle}>annicad304@gmail.com</Text>
-        </View>
-        <Icon name="chevron-forward" size={24} color="white" />
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.menuItem}>
-        <Icon name="document-text-outline" size={24} color="white" />
-        <View style={styles.menuItemContent}>
-          <Text style={styles.menuItemTitle}>Plan</Text>
-          <Text style={styles.menuItemSubtitle}>Basic, Free</Text>
-        </View>
-        <Icon name="chevron-forward" size={24} color="white" />
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.menuItem}>
-        <Icon name="card-outline" size={24} color="white" />
-        <View style={styles.menuItemContent}>
-          <Text style={styles.menuItemTitle}>Stripe ID</Text>
-          <Text style={styles.menuItemSubtitle}>dg278ewfb17d7h</Text>
-        </View>
-        <Icon name="chevron-forward" size={24} color="white" />
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.menuItem}>
-        <Icon name="color-palette-outline" size={24} color="white" />
-        <View style={styles.menuItemContent}>
-          <Text style={styles.menuItemTitle}>Appearance</Text>
-          <Text style={styles.menuItemSubtitle}>Default</Text>
-        </View>
-        <Icon name="chevron-forward" size={24} color="white" />
-      </TouchableOpacity>
+      <MenuItem
+        icon="card-outline"
+        title="Credits"
+        subtitle="Manually add credits"
+      />
+      <MenuItem
+        icon="logo-google"
+        title="Google Account"
+        subtitle="annicad304@gmail.com"
+      />
+      <MenuItem
+        icon="document-text-outline"
+        title="Plan"
+        subtitle="Basic, Free"
+      />
+      <MenuItem
+        icon="card-outline"
+        title="Stripe ID"
+        subtitle="dg278ewfb17d7h"
+      />
+      <MenuItem
+        icon="color-palette-outline"
+        title="Appearance"
+        subtitle="Default"
+      />
     </View>
   );
 };
@@ -111,27 +93,6 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 16,
     marginLeft: 8,
-  },
-  menuItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: 'rgba(255, 255, 255, 0.1)',
-    padding: 16,
-    borderRadius: 12,
-    marginBottom: 12,
-  },
-  menuItemContent: {
-    flex: 1,
-    marginLeft: 12,
-  },
-  menuItemTitle: {
-    color: 'white',
-    fontSize: 16,
-    fontWeight: '500',
-  },
-  menuItemSubtitle: {
-    color: 'rgba(255, 255, 255, 0.7)',
-    fontSize: 14,
   },
 });
 
